@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{593E80
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRU.Data", "MRU.Data\MRU.Data.csproj", "{C96E815F-513D-4A09-BCCE-569AABE8DC8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRU.Web.Models", "MRU.Web.Models\MRU.Web.Models.csproj", "{C3FD0206-9249-4616-98DD-E0701E9FEFFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,14 @@ Global
 		{7152BA97-9AB4-4FB7-9051-A4B070D06A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7152BA97-9AB4-4FB7-9051-A4B070D06A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7152BA97-9AB4-4FB7-9051-A4B070D06A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96E815F-513D-4A09-BCCE-569AABE8DC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96E815F-513D-4A09-BCCE-569AABE8DC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96E815F-513D-4A09-BCCE-569AABE8DC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96E815F-513D-4A09-BCCE-569AABE8DC8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3FD0206-9249-4616-98DD-E0701E9FEFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3FD0206-9249-4616-98DD-E0701E9FEFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3FD0206-9249-4616-98DD-E0701E9FEFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3FD0206-9249-4616-98DD-E0701E9FEFFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
