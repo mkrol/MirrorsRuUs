@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
 
 namespace MRU.Web
 {
@@ -18,6 +20,23 @@ namespace MRU.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+ //           BootstrapContainer();
+        }
+
+        private static void BootstrapContainer()
+        {
+            container = new WindsorContainer()
+                 .Install(FromAssembly.This());
+
+            var controllerFactory = new MRU.Web.Infrastructure.WindsorControllerFactory(container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+        }
+
+        static IWindsorContainer container;
+        public IWindsorContainer Container
+        {
+            get { return container; }
         }
     }
 }
