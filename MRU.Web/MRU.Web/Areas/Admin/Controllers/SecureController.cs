@@ -6,12 +6,9 @@ using System.Web.Mvc;
 
 namespace MRU.Web.Areas.Admin.Controllers
 {
-    public class AdminController : SecureController
+    [Authorize(Roles="Admin")]
+    public abstract class SecureController : Controller
     {
-        // GET: Admin/Admin
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
     }
 }

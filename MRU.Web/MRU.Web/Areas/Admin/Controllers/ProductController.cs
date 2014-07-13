@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MRU.Web.Areas.Admin.Controllers
 {
-    public class ProductController : AdminController
+    public class ProductController : SecureController
     {
         // GET: Admin/Product
         public ActionResult Index()

@@ -195,7 +195,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SecureController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Customer\Controllers\SecureController.cs" />
+    <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -240,6 +243,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\web.config" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -285,8 +289,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Admin\" />
+    <Folder Include="Areas\Customer\Models\" />
+    <Folder Include="Areas\Customer\Views\Secure\" />
+    <Folder Include="Areas\Customer\Views\Shared\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\ShoppingCart\" />
@@ -294,6 +300,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MRU.Data\MRU.Data.csproj">
+      <Project>{c96e815f-513d-4a09-bcce-569aabe8dc8d}</Project>
+      <Name>MRU.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MRU.Web.Models\MRU.Web.Models.csproj">
+      <Project>{c3fd0206-9249-4616-98dd-e0701e9feffb}</Project>
+      <Name>MRU.Web.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

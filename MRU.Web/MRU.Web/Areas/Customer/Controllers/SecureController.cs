@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MRU.Web.Areas.Admin.Controllers
+namespace MRU.Web.Areas.Customer.Controllers
 {
-    public class AdminController : SecureController
+
+    [Authorize(Roles="Customer")]
+    public abstract class SecureController : Controller
     {
-        // GET: Admin/Admin
+        // GET: Customer/Secure
+
         public ActionResult Index()
         {
             return View();
