@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MRU.Web.Models
 {
-    public class Class1
+    public class ProductModel
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
     }
 }
