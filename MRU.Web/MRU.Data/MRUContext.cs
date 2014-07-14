@@ -12,9 +12,16 @@ namespace MRU.Data
         public MRUContext()
             : base("DefaultConnection")
         {
+            Database.SetInitializer<MRUContext>(null);
         }
 
         public DbSet<ProductModel> Products { get; set; }
         public DbSet<CategoryModel> Categories { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MRU.Data;
 
 namespace MRU.Web.Controllers
 {
@@ -12,6 +13,13 @@ namespace MRU.Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public PartialViewResult GetCategories()
+        {
+
+            return PartialView("_Categories",new Category().GetCategories());
         }
     }
 }

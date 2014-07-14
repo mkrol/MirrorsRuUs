@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MRU.Data;
 
 namespace MRU.Web.Controllers
 {
@@ -10,7 +11,12 @@ namespace MRU.Web.Controllers
     {
         public ActionResult Index()
         {
+
+            MRUContext m = new MRUContext();
+            var cats = m.Categories.ToList();
+
             return View();
+           
         }
 
         public ActionResult About()

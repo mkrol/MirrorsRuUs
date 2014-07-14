@@ -239,6 +239,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -290,6 +292,7 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Category\_Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,7 +300,6 @@
     <Folder Include="Areas\Customer\Views\Order\" />
     <Folder Include="Areas\Customer\Views\Secure\" />
     <Folder Include="Areas\Customer\Views\Shared\" />
-    <Folder Include="Views\Category\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
