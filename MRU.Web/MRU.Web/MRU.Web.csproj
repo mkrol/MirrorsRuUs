@@ -203,8 +203,10 @@
     <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
@@ -311,7 +313,9 @@
     <Folder Include="Areas\Customer\Views\Order\" />
     <Folder Include="Areas\Customer\Views\Secure\" />
     <Folder Include="Areas\Customer\Views\Shared\" />
+    <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Product\" />
+    <Folder Include="Views\Search\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +323,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MRU.Data.Interfaces\MRU.Data.Interfaces.csproj">
+      <Project>{08f8b4c6-6927-4011-9c94-b41c954e6a36}</Project>
+      <Name>MRU.Data.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MRU.Data\MRU.Data.csproj">
       <Project>{c96e815f-513d-4a09-bcce-569aabe8dc8d}</Project>
       <Name>MRU.Data</Name>

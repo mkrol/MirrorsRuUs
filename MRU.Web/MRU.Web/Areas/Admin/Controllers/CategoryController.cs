@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MRU.Web.Models.Category;
+using MRU.Data.Interfaces;
 
 namespace MRU.Web.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
+        public ICategory CategoryRepo;
         // GET: Admin/Category
         public ActionResult Index()
         {
@@ -22,11 +24,19 @@ namespace MRU.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(CategoryModel model)
+        public JsonResult Add(CategoryModel model)
         {
             MRU.Data.Category repo = new Data.Category();
-            repo.Add(model);
-            return null;
+            model = repo.Add(model);
+            return Json(model.Id);
+        }
+
+        [HttpGet]
+        public JsonResult Delete(int Id)
+        {
+            //MRU.Data.Category repo = new Data.Category();
+            return Json(true);
+            
         }
     }
 }

@@ -10,9 +10,8 @@ using MRU.Web.Models.Category;
 namespace MRU.Web.Models
 {
     [Table("Product")]
-    public class ProductModel
+    public class ProductModel : AbstractModel 
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
@@ -23,7 +22,6 @@ namespace MRU.Web.Models
         public double Weight { get; set; }
         public bool Active { get; set; }
         public bool Deleted { get; set; }
-        public DateTime CreatedDate { get; set; }
         public virtual ICollection<CategoryModel> Categories { get; set; }
     }
 }

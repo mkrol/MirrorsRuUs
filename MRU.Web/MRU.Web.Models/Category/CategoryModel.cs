@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using MRU.Web.Models;
 
-namespace MRU.Web.Models.Category
+namespace MRU.Web.Models.Category 
 {
     [Table("Category")]
-    public class CategoryModel
+    public class CategoryModel : AbstractModel
     {
         public int Id { get; set; }
         [Display(Name = "Parent Category")]
