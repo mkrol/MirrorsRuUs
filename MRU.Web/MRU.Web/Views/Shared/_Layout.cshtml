@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirrors-R-Us</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fontawesome")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -21,10 +22,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Return Policy", "Return", "Home")</li>
                     <li>@Html.ActionLink("Products", "Index", "Product")</li>
+                    @if(Request.IsAuthenticated)
+                    {
+                        if(User.IsInRole("Customer"))
+                        {
+                            <li>@Html.ActionLink("My Orders","Index","Order", new {area="Customer"}, null) </li>
+                        }
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Admin","Index","Admin", new {area="admin"}, null)</li>
+                        }
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

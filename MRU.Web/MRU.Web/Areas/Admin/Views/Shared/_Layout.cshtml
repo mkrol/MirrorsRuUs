@@ -3,9 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Mirrors-R-Us</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -16,25 +20,64 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Mirrors-R-Us", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Return Policy", "Return", "Home")</li>
+                    <li>@Html.ActionLink("Products", "Index", "Product")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Admin", "Index", "Admin", new { area = "admin" }, null)</li>
+                        }
+                    }
                 </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-
     <div class="container body-content">
-        @RenderBody()
+        &nbsp;
+        <div class="row">
+            <div class="col-sm-4 col-md-3 sidebar">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-home"></i> Admin Home
+                    </a>
+                    <a href="/Admin/Category/" class="list-group-item">
+                        <i class="fa fa-database"></i> Categories
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-bookmark"></i> Products
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-users"></i> Customers <span class="badge">12</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-folder-open-o"></i> Orders <span class="badge">14</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-ticket"></i> Promotions
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-cogs"></i> Configure
+                    </a>
+                </div>
+            </div>
+
+            @RenderBody()
+        </div>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year Mirrors-R-Us</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>

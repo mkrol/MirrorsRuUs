@@ -13,7 +13,7 @@ namespace MRU.Web.Controllers
         {
 
             MRUContext m = new MRUContext();
-            var cats = m.Categories.ToList();
+           // var cats = m.Categories.ToList();
 
             return View();
            

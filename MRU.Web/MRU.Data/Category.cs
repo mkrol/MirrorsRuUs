@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MRU.Web.Models;
+using MRU.Web.Models.Category;
 
 namespace MRU.Data
 {
@@ -22,6 +22,11 @@ namespace MRU.Data
         public List<CategoryModel> GetChildCategories(int Id)
         {
             return new MRUContext().Categories.Where(x => x.ParentId == Id).ToList();
+        }
+
+        public CategoryModel Add(CategoryModel model)
+        {
+            return new MRUContext().Categories.Add(model);
         }
     }
 }

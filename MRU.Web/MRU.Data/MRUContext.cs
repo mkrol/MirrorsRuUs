@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MRU.Web.Models;
+using MRU.Web.Models.Category;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
