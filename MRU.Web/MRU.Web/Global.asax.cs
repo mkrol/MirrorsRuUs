@@ -21,7 +21,7 @@ namespace MRU.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
- //           BootstrapContainer();
+            BootstrapContainer();
         }
 
         private static void BootstrapContainer()

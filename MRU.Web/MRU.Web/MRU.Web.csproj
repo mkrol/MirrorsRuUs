@@ -213,6 +213,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Installers\ControllersInstaller.cs" />
+    <Compile Include="Infrastructure\Installers\DataInstaller.cs" />
     <Compile Include="Infrastructure\WindsorActionInvoker.cs" />
     <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />

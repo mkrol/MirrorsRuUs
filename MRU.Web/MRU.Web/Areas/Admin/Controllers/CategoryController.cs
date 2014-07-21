@@ -10,7 +10,12 @@ namespace MRU.Web.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-        public ICategory CategoryRepo;
+        private ICategory CategoryRepo;
+        public CategoryController(ICategory repo)
+        {
+            CategoryRepo = repo;
+        }
+        
         // GET: Admin/Category
         public ActionResult Index()
         {
