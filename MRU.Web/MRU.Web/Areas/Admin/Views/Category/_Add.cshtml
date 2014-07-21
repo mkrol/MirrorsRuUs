@@ -1,0 +1,30 @@
+﻿@model MRU.Web.Models.Category.CategoryModel
+
+<div>
+    <div class="page-header">
+        <h1><i class="fa fa-plus"></i> Add Category</h1>
+    </div>
+
+    @using (Html.BeginForm("Add", "Category", FormMethod.Post))
+    {
+        <fieldset>
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name)
+        </fieldset>
+        <fieldset>
+            @Html.LabelFor(m => m.ParentId)
+            @Html.TextBoxFor(m => m.ParentId)
+        </fieldset>
+        <a id="AddSubmit" class="fa fa-plus-circle btn btn-success"> Add Category</a>
+        <a id="AddCancel" class="fa fa-times btn btn-warning"> Cancel</a>
+    }
+</div>
+<script type="text/javascript">
+    $("#AddCancel").click(function () {
+        $("#addModal").modal('hide');
+    });
+
+    $("AddSubmit").click(function () {
+        
+    });
+</script>
