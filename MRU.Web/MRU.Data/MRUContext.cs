@@ -18,6 +18,9 @@ namespace MRU.Data
 
         public DbSet<ProductModel> Products { get; set; }
         public DbSet<CategoryModel> Categories { get; set; }
+        public DbSet<OrderModel> Orders { get; set; }
+        public DbSet<PromotionModel> Promotions { get; set; }
+        public DbSet<ManufacturerModel> Manufacturers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
