@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MRU.Web.Models
 {
-    public class OrderModel : AbstractModel 
+    public class OrderModel : AModel 
     {
     }
 }

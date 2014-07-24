@@ -7,11 +7,11 @@ using MRU.Web.Models;
 
 namespace MRU.Data.Interfaces
 {
-    public interface ICrud <T> where T : AbstractModel 
+    public interface ICrud <T> where T : AModel 
     {
         T Save(T model);
+        T Update(T updateMe);
         bool Delete(int id);
-        T Get(T model);
         T GetById(int Id);
     }
 }

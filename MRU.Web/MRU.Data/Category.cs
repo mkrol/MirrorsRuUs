@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using MRU.Web.Models.Category;
 using MRU.Data.Interfaces;
+using NPoco;
 
 namespace MRU.Data
 {
-    public class Category : ICategory
-    {
-        private MRUContext context;
-        public Category()
+    public class Category : ADataContext<CategoryModel>, ICategory
+    {        
+        public Category() : base()
         {
-            context = new MRUContext();
         }
 
         public CategoryModel GetById(int id)
         {
-            return context.Categories.Where(x => x.Id == id).SingleOrDefault();
+            CategoryModel m = MRUDatabase.SingleById<CategoryModel>(id);
+            return m;
         }
 
         public CategoryModel Get(CategoryModel m)
@@ -28,49 +28,23 @@ namespace MRU.Data
 
         public List<CategoryModel> GetCategories()
         {
-            return context.Categories.ToList();
+            return MRUDatabase.Fetch<CategoryModel>();
         }
 
         public List<CategoryModel> GetParentCategories()
         {
-            return context.Categories.Where(x => !x.ParentId.HasValue).ToList();
+            return MRUDatabase.Fetch<CategoryModel>("where parentid is null");
         }
 
         public List<CategoryModel> GetChildCategories(int Id)
         {
-            return context.Categories.Where(x => x.ParentId == Id).ToList();
+            return MRUDatabase.Fetch<CategoryModel>("where parentid = @0", Id);
         }
 
-        public CategoryModel Add(CategoryModel model)
+        
+        public List<CategoryModel> GetCategoriesForTypeAhead(string categoryName)
         {
-            return context.Categories.Add(model);
-        }
-
-        public bool Delete(int id)
-        {
-            try
-            {
-                CategoryModel m = context.Categories.Where(x => x.Id == id).Single();
-                context.Categories.Remove(m);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }            
-        }
-        public CategoryModel Save(CategoryModel m)
-        {
-            CategoryModel saveMe = context.Categories.Where(x => x.Id == m.Id).Single();
-            if (null == saveMe)
-            {
-                saveMe = context.Categories.Add(m);
-            }
-            else
-            {
-                
-            }
-            return saveMe;
+            return MRUDatabase.Fetch<CategoryModel>("where Name like '@0'", categoryName);
         }
     }
 }

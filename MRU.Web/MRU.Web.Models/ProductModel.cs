@@ -10,7 +10,7 @@ using MRU.Web.Models.Category;
 namespace MRU.Web.Models
 {
     [Table("Product")]
-    public class ProductModel : AbstractModel 
+    public class ProductModel : AModel 
     {
         public string Title { get; set; }
         public string Description { get; set; }

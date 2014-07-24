@@ -7,8 +7,8 @@ using MRU.Web.Models.Category;
 
 namespace MRU.Data.Interfaces
 {
-    public interface ICategory : ICrud<CategoryModel>
+    public interface ICategory 
     {
-        
+        List<CategoryModel> GetCategoriesForTypeAhead(string categoryName);   
     }
 }

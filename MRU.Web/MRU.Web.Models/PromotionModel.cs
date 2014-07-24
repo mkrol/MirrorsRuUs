@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MRU.Web.Models
 {
-    public class PromotionModel : AbstractModel 
+    public class PromotionModel : AModel 
     {
     }
 }

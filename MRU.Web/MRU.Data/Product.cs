@@ -8,16 +8,16 @@ using MRU.Data.Interfaces;
 
 namespace MRU.Data
 {
-    public class Product : IProduct
+    public class Product : ADataContext<ProductModel>, IProduct
     {
-        private MRUContext context;
+        
         public Product()
         {
-            context = new MRUContext();
+     
         }
         public List<ProductModel> GetActiveProducts()
         {
-            return context.Products.Where(x => x.Active == true && x.Deleted==false).ToList();
+            return MRUDatabase.Fetch<ProductModel>("where isdeleted <> 1");
         }
 
         public ProductModel Get(ProductModel m)
@@ -27,23 +27,7 @@ namespace MRU.Data
 
         public List<ProductModel> GetProducts()
         {
-            return context.Products.ToList();
-        }
-
-        public ProductModel GetById(int Id)
-        {
-            return new MRUContext().Products.Where(x => x.Id == Id).SingleOrDefault();
-        }
-
-        public ProductModel Save(ProductModel m)
-        {
-            ProductModel saveMe = context.Products.Add(m);
-            return saveMe;
-        }
-
-        public bool Delete(int id)
-        {
-            throw new NotImplementedException();
+            return MRUDatabase.Fetch<ProductModel>();
         }
     }
 }

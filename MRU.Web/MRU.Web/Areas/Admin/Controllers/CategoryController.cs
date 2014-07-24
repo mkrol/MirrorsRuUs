@@ -32,7 +32,7 @@ namespace MRU.Web.Areas.Admin.Controllers
         public JsonResult Add(CategoryModel model)
         {
             MRU.Data.Category repo = new Data.Category();
-            model = repo.Add(model);
+            model = repo.Save(model);
             return Json(model.Id);
         }
 
@@ -42,6 +42,13 @@ namespace MRU.Web.Areas.Admin.Controllers
             //MRU.Data.Category repo = new Data.Category();
             return Json(true);
             
+        }
+
+        [HttpGet]
+        public JsonResult CategoriesTypeAhead(string categoryName)
+        {
+            var cats = CategoryRepo.GetCategoriesForTypeAhead(categoryName).Select(x => new { x.Id, x.Name });
+            return Json(cats, JsonRequestBehavior.AllowGet);       
         }
     }
 }
