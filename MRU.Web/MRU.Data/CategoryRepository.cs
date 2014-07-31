@@ -9,10 +9,15 @@ using NPoco;
 
 namespace MRU.Data
 {
-    public class Category : ADataContext<CategoryModel>, ICategory
+    public class CategoryRepository : ADataContext<CategoryModel>, ICategoryRepository
     {        
-        public Category() : base()
+        public CategoryRepository() : base()
         {
+        }
+
+        public List<CategoryModel> GetCategories()
+        {
+            return MRUDatabase.Fetch<CategoryModel>();
         }
 
         public CategoryModel GetById(int id)

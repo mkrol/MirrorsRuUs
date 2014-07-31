@@ -16,7 +16,7 @@ namespace MRU.Web.Controllers
         }
         public PartialViewResult GetProducts()
         {
-            return PartialView("_Products", new Product().GetActiveProducts());
+            return PartialView("_Products", new ProductRepository().GetActiveProducts());
         }
     }
 }

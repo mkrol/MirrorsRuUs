@@ -8,10 +8,10 @@ using MRU.Data.Interfaces;
 
 namespace MRU.Data
 {
-    public class Product : ADataContext<ProductModel>, IProduct
+    public class ProductRepository : ADataContext<ProductModel>, IProductRepository
     {
         
-        public Product()
+        public ProductRepository()
         {
      
         }

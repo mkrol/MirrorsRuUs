@@ -9,11 +9,11 @@
     {
         <fieldset>
             @Html.LabelFor(m => m.Name)
-            @Html.TextBoxFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new {@class = "CategoryName"})
         </fieldset>
         <fieldset>
             @Html.LabelFor(m => m.ParentId)
-            @Html.TextBoxFor(m => m.ParentId)
+            @Html.TextBoxFor(m => m.ParentId, new { @class = "CategoryParentId" })
         </fieldset>
         <a id="AddSubmit" class="fa fa-plus-circle btn btn-success"> Add Category</a>
         <a id="AddCancel" class="fa fa-times btn btn-warning"> Cancel</a>
@@ -24,7 +24,22 @@
         $("#categoryModal").modal('hide');
     });
 
-    $("AddSubmit").click(function () {
-        
-    });
+    $("#AddSubmit").click(function () {
+        var data = {};
+        data.Name =  $(".CategoryName").val();
+        data.ParentId = $(".CategoryParentId").val();
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("Add", "Category", new { area = "Admin" })",
+            data: data,
+            cache: false,
+            success: function (data) {
+                if (data > 0) { $("#categoryModal").modal('hide'); }
+            },
+            error: function (data) { console.log("error");}
+        });
+
+        console.log('');
+
+        });
 </script>

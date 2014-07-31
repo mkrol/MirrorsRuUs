@@ -6,10 +6,11 @@
     <title>Mirrors-R-Us</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/Angular")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/angular")
-
+    @Scripts.Render("~/bundles/DataTables")
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -41,36 +42,36 @@
         </div>
     </div>
     <div class="container body-content">
-        &nbsp;
-        <div class="row">
-            <div class="col-sm-4 col-md-3 sidebar">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-home"></i> Admin Home
-                    </a>
-                    <a href="/Admin/Category/" class="list-group-item">
-                        <i class="fa fa-database"></i> Categories
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-bookmark"></i> Products
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-building"></i> Manufacturers
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-users"></i> Customers <span class="badge">12</span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-folder-open-o"></i> Orders <span class="badge">14</span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-ticket"></i> Promotions
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-cogs"></i> Configure
-                    </a>
-                </div>
+        <div class="col-sm-4 col-md-2 sidebar">
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-home"></i> Admin Home
+                </a>
+                <a href="/Admin/Category/" class="list-group-item">
+                    <i class="fa fa-database"></i> Categories
+                </a>
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-bookmark"></i> Products
+                </a>
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-building"></i> Manufacturers
+                </a>
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-users"></i> Customers <span class="badge">12</span>
+                </a>
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-folder-open-o"></i> Orders <span class="badge">14</span>
+                </a>
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-ticket"></i> Promotions
+                </a>
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-cogs"></i> Configure
+                </a>
             </div>
+        </div>
+        <div class="col-md-10">
+
 
             @RenderBody()
         </div>
@@ -78,7 +79,7 @@
         <footer>
             <p>&copy; @DateTime.Now.Year Mirrors-R-Us</p>
         </footer>
-    </div>
+ 
 
     
     @RenderSection("scripts", required: false)

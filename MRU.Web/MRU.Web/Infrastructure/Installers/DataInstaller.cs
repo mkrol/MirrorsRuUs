@@ -9,7 +9,7 @@ namespace MRU.Web.Infrastructure.Installers
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Classes.FromAssemblyNamed("MRU.Data")
-                                .Where(type=>type.Namespace.StartsWith("MRU.Data"))  
+                                .Where(type=>type.Name.EndsWith("Repository"))
                                 .WithService.DefaultInterfaces()
                                 .Configure(c => c.LifestyleTransient()));
         }

@@ -10,8 +10,8 @@ namespace MRU.Web.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-        private ICategory CategoryRepo;
-        public CategoryController(ICategory repo)
+        private ICategoryRepository CategoryRepo;
+        public CategoryController(ICategoryRepository repo)
         {
             CategoryRepo = repo;
         }
@@ -19,7 +19,8 @@ namespace MRU.Web.Areas.Admin.Controllers
         // GET: Admin/Category
         public ActionResult Index()
         {
-            return View();
+            
+            return View("Index", CategoryRepo.GetCategories());
         }
 
         [HttpGet]
@@ -31,7 +32,7 @@ namespace MRU.Web.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult Add(CategoryModel model)
         {
-            MRU.Data.Category repo = new Data.Category();
+            MRU.Data.CategoryRepository repo = new Data.CategoryRepository();
             model = repo.Save(model);
             return Json(model.Id);
         }

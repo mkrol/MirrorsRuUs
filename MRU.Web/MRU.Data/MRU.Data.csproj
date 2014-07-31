@@ -47,8 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADataContext.cs" />
-    <Compile Include="Category.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="CategoryRepository.cs" />
+    <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

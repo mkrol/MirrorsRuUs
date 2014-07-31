@@ -7,7 +7,7 @@ using MRU.Web.Models;
 
 namespace MRU.Data.Interfaces
 {
-    public interface IProduct : ICrud<ProductModel>
+    public interface IProductRepository : ICrud<ProductModel>
     {
     }
 }

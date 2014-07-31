@@ -1,6 +1,7 @@
 ﻿using NPoco;
 using MRU.Data.Interfaces;
 using MRU.Web.Models;
+using System;
 
 namespace MRU.Data
 {
@@ -14,6 +15,7 @@ namespace MRU.Data
         }
         public T Save(T saveMe)
         {
+            saveMe.CreatedDate = saveMe.Id == 0 ? DateTime.Now : saveMe.CreatedDate;
             MRUDatabase.Insert(saveMe);
             return saveMe;
         }
