@@ -42,7 +42,7 @@
     <Compile Include="ICategoryRepository.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="IOrder.cs" />
-    <Compile Include="IProduct.cs" />
+    <Compile Include="IProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

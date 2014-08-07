@@ -31,10 +31,7 @@ namespace MRU.Data
             return new CategoryModel();
         }
 
-        public List<CategoryModel> GetCategories()
-        {
-            return MRUDatabase.Fetch<CategoryModel>();
-        }
+      
 
         public List<CategoryModel> GetParentCategories()
         {

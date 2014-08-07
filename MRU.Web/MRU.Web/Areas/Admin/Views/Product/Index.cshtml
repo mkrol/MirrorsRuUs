@@ -2,5 +2,14 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Admin Product Index</h2>
+<div class="page-header">
+    <div style="float:right;"><a data-toggle="modal" href="/Admin/Product/Add" data-target="#productModal" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add Product</a></div>
+    <h1><i class="fa fa-bookmark"></i> Products</h1>
+</div>
+
+<div id="productModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content"></div>
+    </div>
+</div>
 

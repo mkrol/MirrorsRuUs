@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MRU.Data.Interfaces;
+using MRU.Web.Models.Product;
 
 namespace MRU.Web.Areas.Admin.Controllers
 {
@@ -24,6 +25,17 @@ namespace MRU.Web.Areas.Admin.Controllers
         public ActionResult Edit(int Id)
         {
             return View("Edit");
+        }
+
+        [HttpGet]
+        public PartialViewResult Add()
+        {
+            return PartialView("_Add");
+        }
+        [HttpPost] JsonResult Add(ProductModel model)
+        {
+            model = ProductRepository.Save(model);
+            return Json(model.Id);
         }
     }
 }

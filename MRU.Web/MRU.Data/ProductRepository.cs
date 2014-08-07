@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MRU.Web.Models;
+using MRU.Web.Models.Product;
 using MRU.Data.Interfaces;
 
 namespace MRU.Data
