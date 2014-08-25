@@ -55,9 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AModel.cs" />
+    <Compile Include="Category\Admin\CategoryViewModel.cs" />
     <Compile Include="Category\CategoryModel.cs" />
     <Compile Include="ColumnModel.cs" />
-    <Compile Include="GridSetupModel.cs" />
+    <Compile Include="Grid\GridColumnEnum.cs" />
+    <Compile Include="Grid\GridColumnViewModel.cs" />
+    <Compile Include="Grid\GridDataModel.cs" />
+    <Compile Include="Grid\GridViewModel.cs" />
     <Compile Include="ManufacturerModel.cs" />
     <Compile Include="OrderModel.cs" />
     <Compile Include="PromotionModel.cs" />

@@ -11,11 +11,6 @@ namespace MRU.Web
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/DataTables").Include(
-                        "~/Scripts/jquery.dataTables.min.js",
-                        "~/Scripts/jquery.ext.dataTables.js",
-                        "~/Scripts/bootstrap.datatables.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/Angular").Include(
                         "~/Scripts/angular.min.js"));
 
@@ -37,7 +32,6 @@ namespace MRU.Web
                       "~/Content/bootstrap.css",
                       "~/Content/fontawesome/font-awesome.css",
                       "~/Content/bootstrap-tagsinput.css",
-                      "~/Content/DataTables-1.10.0/jquery.dataTables.min.css",
                       "~/Content/site.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,

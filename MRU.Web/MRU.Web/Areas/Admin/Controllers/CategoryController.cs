@@ -19,8 +19,25 @@ namespace MRU.Web.Areas.Admin.Controllers
         // GET: Admin/Category
         public ActionResult Index()
         {
-            
-            return View("Index", CategoryRepository.GetCategories());
+
+            UrlHelper helper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext); 
+            MRU.Web.Models.Category.Admin.CategoryViewModel model = new Models.Category.Admin.CategoryViewModel();
+            model.CategoryGridModel.DataUrl = helper.Action("GetCategoriesForGrid", "Category", new { area = "admin" });
+            return View("Index", model);
+        }
+
+        [HttpGet]
+        public JsonResult GetCategoriesForGrid()
+        {
+            List<Tester> mdk = new List<Tester>();
+            mdk.Add(new Tester() { name = "Test", id = "1" });
+            mdk.Add(new Tester() { name = "Test2", id = "2" });
+            mdk.Add(new Tester() { name = "Test3", id = "3" });
+            var obj = new
+            {
+                blob = mdk
+            };
+            return Json(obj, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -50,5 +67,11 @@ namespace MRU.Web.Areas.Admin.Controllers
             var cats = CategoryRepository.GetCategoriesForTypeAhead(categoryName).Select(x => new { x.Id, x.Name });
             return Json(cats, JsonRequestBehavior.AllowGet);       
         }
+    }
+
+    public class Tester
+    {
+        public string name { get; set; }
+        public string id { get; set; }
     }
 }

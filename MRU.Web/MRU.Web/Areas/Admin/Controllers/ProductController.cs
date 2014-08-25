@@ -32,10 +32,18 @@ namespace MRU.Web.Areas.Admin.Controllers
         {
             return PartialView("_Add");
         }
-        [HttpPost] JsonResult Add(ProductModel model)
+
+        [HttpPost] 
+        public JsonResult Add(ProductModel model)
         {
             model = ProductRepository.Save(model);
             return Json(model.Id);
+        }
+
+        [HttpGet]
+        public JsonResult  GetProductsForGrid()
+        {
+            return Json(0);
         }
     }
 }

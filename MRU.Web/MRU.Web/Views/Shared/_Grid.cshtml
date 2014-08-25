@@ -1,0 +1,25 @@
+﻿@model MRU.Web.Models.Grid.GridViewModel 
+
+<script src="~/Scripts/jquery.dataTables.min.js" type="text/javascript" language="javascript"></script>
+<script src="~/Scripts/dataTables.bootstrap.js" type="text/javascript" language="javascript"></script>
+<link href="~/Content/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+<div class="row">
+    <table id="@Model.Id" class="display" cellspacing="0" width="100%" data-url="@Model.DataUrl">
+        <thead>
+            <tr>
+                @foreach (var col in Model.Columns)
+                { 
+                    <th id="@col.Id"> @col.Name</th>
+                }
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                @foreach (var col in Model.Columns)
+                {
+                    <th id="@col.Id"> @col.Name</th>
+                }
+            </tr>
+        </tfoot>
+    </table>
+</div>
